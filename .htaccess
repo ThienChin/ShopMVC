@@ -1,9 +1,10 @@
 RewriteEngine On
 RewriteBase /ShopMVC/
 
-# Bỏ qua xử lý các file ảnh, JS, CSS – cho load trực tiếp
-RewriteCond %{REQUEST_URI} \.(jpg|jpeg|png|gif|webp|svg|css|js)$ [NC]
+# ✅ Cho phép truy cập trực tiếp các tài nguyên tĩnh (hình ảnh, JS, CSS, FONT)
+RewriteCond %{REQUEST_URI} \.(jpg|jpeg|png|gif|webp|svg|css|js|woff|woff2|ttf|eot|otf)$ [NC]
 RewriteRule ^ - [L]
+
 
 
 RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
